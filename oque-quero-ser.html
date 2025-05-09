@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-pic"><img src="img/diego.jpg" alt=""></div>
+        <h2 class="name">Diego Brito Alves</h2>
+        <section class="about">
+            <p>Sou um estudante dedicado da Escola SESI de Paraguaçu Paulista, atualmente cursando o 3° Ano do Ensino
+                Médio e, simultaneamente, a formação técnica em Tecnologia da Informação no SENAI. Essa jornada dupla
+                tem me proporcionado uma base sólida de conhecimentos teóricos e práticos, despertando em mim uma paixão
+                crescente pela área de TI.
+
+                Com 18 anos e motivado a evoluir continuamente neste campo dinâmico, busco aprimorar minhas habilidades
+                e conhecimentos a cada dia. Acredito que a tecnologia possui um potencial transformador imenso, e desejo
+                fazer parte dessa evolução, contribuindo ativamente para inovações e soluções eficientes</p>
+        </section>
+        <button onclick="history.back()">Voltar</button>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c9d6ff;
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .name {
+            position: relative;
+            bottom: 25px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .profile-pic img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            height: 300px;
+            box-shadow: 2px 2px 0 0 #d6d6d6;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</body>
+
+</html>

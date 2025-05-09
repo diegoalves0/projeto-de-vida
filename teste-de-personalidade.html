@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Personalidade</title>
+  <link rel="stylesheet" href="personalidade.css">
+  <link rel="estilo.css" href="">
+</head>
+<body>
+  <div class="container">
+    <h1>Teste de Personalidade</h1>
+    <form action="resultado.php" method="post">
+      <!-- Pergunta 1 -->
+      <div class="pergunta">
+        <p>1. Como você lida com desafios?</p>
+        <label><input type="radio" name="q1" value="analitico" required> Penso antes de agir</label>
+        <label><input type="radio" name="q1" value="criativo"> Tento uma abordagem diferente</label>
+        <label><input type="radio" name="q1" value="pratico"> Vou direto ao ponto</label>
+        <label><input type="radio" name="q1" value="sociavel"> Peço ajuda ou converso com alguém</label>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="pergunta">
+        <p>2. O que você prefere fazer no tempo livre?</p>
+        <label><input type="radio" name="q2" value="sociavel" required> Estar com amigos</label>
+        <label><input type="radio" name="q2" value="analitico"> Resolver enigmas ou ler</label>
+        <label><input type="radio" name="q2" value="criativo"> Criar algo novo (arte, música...)</label>
+        <label><input type="radio" name="q2" value="pratico"> Organizar ou consertar coisas</label>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="pergunta">
+        <p>3. Como você toma decisões importantes?</p>
+        <label><input type="radio" name="q3" value="pratico" required> Rápido e com base na experiência</label>
+        <label><input type="radio" name="q3" value="analitico"> Com muita análise e reflexão</label>
+        <label><input type="radio" name="q3" value="sociavel"> Conversando com pessoas de confiança</label>
+        <label><input type="radio" name="q3" value="criativo"> Pensando fora da caixa</label>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="pergunta">
+        <p>4. O que mais te motiva?</p>
+        <label><input type="radio" name="q4" value="criativo" required> Liberdade para criar</label>
+        <label><input type="radio" name="q4" value="analitico"> Compreender como as coisas funcionam</label>
+        <label><input type="radio" name="q4" value="sociavel"> Ajudar os outros</label>
+        <label><input type="radio" name="q4" value="pratico"> Ver resultados concretos</label>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="pergunta">
+        <p>5. Em um projeto em grupo, qual papel você prefere?</p>
+        <label><input type="radio" name="q5" value="sociavel" required> Coordenar e motivar a equipe</label>
+        <label><input type="radio" name="q5" value="analitico"> Fazer o planejamento e análise</label>
+        <label><input type="radio" name="q5" value="criativo"> Propor ideias inovadoras</label>
+        <label><input type="radio" name="q5" value="pratico"> Executar tarefas rapidamente</label>
+      </div>
+
+      <!-- Pergunta 6 -->
+      <div class="pergunta">
+        <p>6. Qual dessas frases mais combina com você?</p>
+        <label><input type="radio" name="q6" value="analitico" required> “Quero entender o porquê de tudo.”</label>
+        <label><input type="radio" name="q6" value="criativo"> “Adoro imaginar novas possibilidades.”</label>
+        <label><input type="radio" name="q6" value="pratico"> “Prefiro fazer do que falar.”</label>
+        <label><input type="radio" name="q6" value="sociavel"> “Gosto de estar com pessoas.”</label>
+      </div>
+
+      <!-- Pergunta 7 -->
+      <div class="pergunta">
+        <p>7. Quando algo dá errado, você tende a:</p>
+        <label><input type="radio" name="q7" value="analitico" required> Analisar o que aconteceu</label>
+        <label><input type="radio" name="q7" value="sociavel"> Procurar apoio</label>
+        <label><input type="radio" name="q7" value="pratico"> Agir rapidamente para resolver</label>
+        <label><input type="radio" name="q7" value="criativo"> Pensar em uma nova abordagem</label>
+      </div>
+
+      <!-- Pergunta 8 -->
+      <div class="pergunta">
+        <p>8. Qual ambiente te agrada mais?</p>
+        <label><input type="radio" name="q8" value="sociavel" required> Ambientes colaborativos</label>
+        <label><input type="radio" name="q8" value="analitico"> Locais calmos para concentração</label>
+        <label><input type="radio" name="q8" value="pratico"> Locais com ferramentas e recursos</label>
+        <label><input type="radio" name="q8" value="criativo"> Espaços artísticos e inspiradores</label>
+      </div>
+
+      <!-- Pergunta 9 -->
+      <div class="pergunta">
+        <p>9. Em uma discussão, você costuma:</p>
+        <label><input type="radio" name="q9" value="sociavel" required> Tentar manter a harmonia</label>
+        <label><input type="radio" name="q9" value="analitico"> Apresentar argumentos bem fundamentados</label>
+        <label><input type="radio" name="q9" value="criativo"> Trazer uma nova perspectiva</label>
+        <label><input type="radio" name="q9" value="pratico"> Ir direto ao ponto</label>
+      </div>
+
+      <!-- Pergunta 10 -->
+      <div class="pergunta">
+        <p>10. Como você aprende melhor?</p>
+        <label><input type="radio" name="q10" value="pratico" required> Fazendo na prática</label>
+        <label><input type="radio" name="q10" value="analitico"> Estudando teorias e lógica</label>
+        <label><input type="radio" name="q10" value="criativo"> Explorando e experimentando</label>
+        <label><input type="radio" name="q10" value="sociavel"> Aprendendo com os outros</label>
+      </div>
+
+      <button type="submit">Ver Resultado</button>
+    </form>
+  </div>
+</body>
+</html>

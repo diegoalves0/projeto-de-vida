@@ -1,0 +1,1217 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    padding: 1%;
+    color: white;
+    background-color: #AB3232;
+}
+
+.nav-bar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    gap: 490px;
+
+}
+
+.buttons-index {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    right: -700px;
+    font-size: 30px;
+    color: white;
+    border: none;
+}
+
+.buttons-index button {
+    background-color: #AB3232;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: "Rubik", serif;
+}
+
+.buttons2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    right: 40px;
+    bottom: 5px;
+    background-color: #515D69;
+    color: white;
+    border: none;
+    font-family: "Rubik", serif;
+}
+
+.buttons2 button {
+    background-color: #515D69;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.nav-bar img {
+    height: 100px;
+    width: 150px;
+}
+
+.nav-bar2 img {
+    height: 100px;
+    width: 150px;
+}
+
+.imagem-usuario {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(176, 173, 173);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: relative;
+    left: 130px;
+}
+
+.imagem-usuario img {
+    position: relative;
+    left: 25px;
+    height: 50px;
+    width: 50px;
+}
+
+.logo-meio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.ener {
+    position: relative;
+    left: 40px;
+}
+
+.vision {
+    position: relative;
+    right: 35px;
+}
+
+.ener2 {
+    position: relative;
+    left: 40px;
+    bottom: 4px;
+}
+
+.vision2 {
+    position: relative;
+    right: 35px;
+    bottom: 4px;
+}
+
+.name-usuario {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    position: relative;
+    left: 130px;
+}
+
+.name-usuario2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    position: relative;
+    left: -30px;
+}
+
+.name-usuario3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    position: relative;
+    left: -130px;
+}
+
+.imagem img {
+    height: 150px;
+    width: 50px;
+}
+
+
+.diario-mensal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    font-family: Arial, Helvetica, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 50ch;
+
+}
+
+.consumo-diario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    height: 350px;
+    max-width: 350px;
+    box-shadow: 10px 10px 40px black;
+    transition: all 0.3s ease;
+
+}
+
+.consumo-diario:hover {
+    transform: scale(1.05);
+}
+
+.consumo-diario img {
+    height: 200px;
+    width: 200px;
+}
+
+.consumo-mensal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    height: 350px;
+    max-width: 350px;
+    box-shadow: 10px 10px 40px;
+    transition: all 0.3s ease;
+}
+
+.consumo-mensal:hover {
+    transform: scale(1.05);
+}
+
+.consumo-mensal img {
+    height: 200px;
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* form_dispositivo */
+
+.Consumo-diario2 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 10px 10px 40px;
+    padding: 10px;
+    width: 570px;
+    font-family: "Rubik", serif;
+    color: #000000;
+}
+
+.Consumo-diario2 ::placeholder {
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    font-family: "Rubik", serif;
+}
+
+.Consumo-diario2 input,
+option {
+    background-color: rgba(128, 128, 128, 0.5);
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    height: 30px;
+    font-size: 15px;
+    font-family: "Rubik", serif;
+}
+
+.Consumo-diario2 form,
+select {
+    display: flex;
+    font-family: "Rubik", serif;
+    flex-direction: column;
+    gap: 4px;
+    color: #000000;
+
+}
+
+.container {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+
+}
+
+/* Carrossel full-screen */
+.carrossel {
+    width: 100%;
+    height: 100%;
+    /* Ocupa 100% da altura da tela */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Container das imagens */
+.carrossel-container {
+    display: flex;
+    width: 100%;
+    /* 4 imagens, então 4 * 100% */
+    height: 100%;
+    animation: slide 16s infinite;
+    /* 4 imagens * 4s cada = 16s */
+    border-width: 0px;
+}
+
+.carrossel-container img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Animação do carrossel */
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    /* Exibe a primeira imagem por 4s */
+    25% {
+        transform: translateX(-100%);
+    }
+
+    /* Transição para a segunda imagem */
+    45% {
+        transform: translateX(-100%);
+    }
+
+    /* Exibe a segunda imagem por 4s */
+    50% {
+        transform: translateX(-200%);
+    }
+
+    /* Transição para a terceira imagem */
+    70% {
+        transform: translateX(-200%);
+    }
+
+    /* Exibe a terceira imagem por 4s */
+    75% {
+        transform: translateX(-300%);
+    }
+
+    /* Transição para a quarta imagem */
+    95% {
+        transform: translateX(-300%);
+    }
+
+    /* Exibe a quarta imagem por 4s */
+    100% {
+        transform: translateX(0%);
+    }
+
+    /* Volta para a primeira imagem */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Resetando margens e padding para garantir uma base consistente */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis de cores */
+:root {
+    --color-neutral-0: #FFFFFF;
+    --color-neutral-10: #F2F2F2;
+    --color-neutral-20: #E6E6E6;
+    --color-neutral-30: #CCCCCC;
+    --color-neutral-40: #B3B3B3;
+    --color-neutral-50: #999999;
+    --color-primary: #0078D4;
+    --color-secondary: #0063A8;
+}
+
+/* Estilo do footer */
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+    background-color: var(--color-neutral-10);
+    z-index: 1000;
+    position: relative;
+    margin-top: auto;
+}
+
+#footer_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem 3rem;
+    gap: 1rem;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 1rem;
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#footer_copyright {
+    background-color: black;
+    /* Cor de fundo preta */
+    color: white;
+    /* Cor do texto branca */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px 0;
+    /* Espaçamento vertical */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#footer_copyright p {
+    margin: 0;
+}
+
+/* Layout flexível para o corpo da página */
+body {
+    font-family: "Rubik", serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Garantir que a altura da página ocupe toda a tela */
+}
+
+main {
+    flex-grow: 1;
+    /* Faz o conteúdo principal ocupar o espaço restante da tela */
+    padding-bottom: 60px;
+    /* Adiciona espaço para o footer não sobrepor o conteúdo */
+}
+
+/* Garantindo que o conteúdo da página se ajuste quando o footer não está fixo */
+footer {
+    position: relative;
+    margin-top: auto;
+    padding: 1rem 0;
+}
+
+/* Estilos para links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos responsivos para o footer */
+@media (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: 1fr;
+        /* Em telas menores, o conteúdo fica em uma única coluna */
+        padding: 1rem;
+    }
+
+    #footer_social_media {
+        justify-content: center;
+    }
+}
+
+/* Responsividade para telas médias */
+@media screen and (max-width: 1024px) {
+    #footer_content {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem 2rem;
+    }
+
+    #footer_social_media {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    #footer_contacts img {
+        width: 200px;
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #footer_social_media {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #footer_contacts img {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .footer-list {
+        align-items: center;
+    }
+
+    #footer_subscribe {
+        align-items: center;
+    }
+
+    #input_group {
+        width: 100%;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones) */
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    #footer_contacts img {
+        width: 120px;
+    }
+
+    .footer-list {
+        align-items: center;
+    }
+
+    #footer_subscribe {
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #input_group input {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Carrossel full-screen */
+.carrossel {
+    width: 100%;
+    height: 100%;
+    /* Ocupa 100% da altura da tela */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Container das imagens */
+.carrossel-container {
+    display: flex;
+    width: 100%;
+    /* 4 imagens, então 4 * 100% */
+    height: 100%;
+    animation: slide 16s infinite;
+    /* 4 imagens * 4s cada = 16s */
+    border-width: 0px;
+}
+
+/* Estilo das imagens */
+.carrossel-container img {
+    width: 100%;
+    height: 335px;
+    /* Garante que a imagem cubra toda a área sem distorcer */
+    flex-shrink: 0;
+    /* Impede que as imagens encolham */
+}
+
+/* Animação do carrossel */
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    /* Exibe a primeira imagem por 4s */
+    25% {
+        transform: translateX(-100%);
+    }
+
+    /* Transição para a segunda imagem */
+    45% {
+        transform: translateX(-100%);
+    }
+
+    /* Exibe a segunda imagem por 4s */
+    50% {
+        transform: translateX(-200%);
+    }
+
+    /* Transição para a terceira imagem */
+    70% {
+        transform: translateX(-200%);
+    }
+
+    /* Exibe a terceira imagem por 4s */
+    75% {
+        transform: translateX(-300%);
+    }
+
+    /* Transição para a quarta imagem */
+    95% {
+        transform: translateX(-300%);
+    }
+
+    /* Exibe a quarta imagem por 4s */
+    100% {
+        transform: translateX(0%);
+    }
+
+    /* Volta para a primeira imagem */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --color-neutral-0: #0e0c0c;
+    --color-neutral-10: #171717;
+    --color-neutral-30: #a8a29e;
+    --color-neutral-40: #f5f5f5;
+}
+
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+}
+
+#footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem 3rem;
+    gap: 1rem;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 1rem;
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: #53e6fb;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_subscribe p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #53e6fb;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 0px 1.75rem;
+    font-size: 1.125rem;
+    height: 100%;
+    transition: all 0.4s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+    background-color: var(--color-neutral-10);
+    z-index: 1;
+    /* Certifica-se que o footer não sobreponha outros elementos */
+    position: relative;
+    margin-top: auto;
+    padding-bottom: 60px;
+    /* Para garantir que o conteúdo não seja cortado pelo footer */
+}
+
+#footer_copyright {
+    background-color: black;
+    /* Cor de fundo preta */
+    color: white;
+    /* Cor do texto branca */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px 0;
+    /* Espaçamento vertical */
+    position: relative;
+    /* Coloca o copyright no final sem sobrepor os outros itens */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Faz o footer ocupar toda a largura da tela */
+    z-index: 10;
+    /* Mantém o copyright acima de outros elementos */
+}
+
+#footer_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem 3rem;
+    gap: 1rem;
+    z-index: 5;
+    /* Garante que os itens de conteúdo fiquem abaixo do copyright */
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 1rem;
+    z-index: 8;
+    /* Garante que os ícones sociais estejam acima do conteúdo do footer */
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+}
+
+#footer_copyright p {
+    margin: 0;
+}
+
+/* Restante do seu CSS continua igual */
+
+#footer_copyright {
+    background-color: black;
+    /* Cor de fundo preta */
+    color: white;
+    /* Cor do texto branca */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px 0;
+    /* Espaçamento vertical */
+    position: absolute;
+    /* Garante que ele fique fixo ao final da tela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Faz o footer ocupar toda a largura da tela */
+}
+
+#footer_copyright p {
+    margin: 0;
+    /* Remove a margem do parágrafo */
+}
+
+
+/* Responsividade para telas médias */
+@media screen and (max-width: 1024px) {
+    #footer_content {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem 2rem;
+    }
+
+    #footer_social_media {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    #footer_contacts img {
+        width: 200px;
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #footer_social_media {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #footer_contacts img {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .footer-list {
+        align-items: center;
+    }
+
+    #footer_subscribe {
+        align-items: center;
+    }
+
+    #input_group {
+        width: 100%;
+    }
+
+    #footer_copyright {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones) */
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    #footer_contacts img {
+        width: 120px;
+    }
+
+    .footer-list {
+        align-items: center;
+    }
+
+    #footer_subscribe {
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #input_group input {
+        font-size: 0.9rem;
+    }
+
+    #footer_copyright {
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    /*index*/
+    .nav-bar2 {
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        justify-content: space-evenly;
+    }
+
+    .buttons2 {
+        position: relative;
+        left: -10px;
+    }
+
+    .name-usuario2 {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    .logo2 {
+        position: relative;
+        right: 20px;
+        top: 10px;
+
+    }
+
+    .logo2 img {
+        height: 80px;
+        width: 120px;
+        margin: 5px;
+
+    }
+
+    /*IMAGEM DO CARROSSEL*/
+    .imagem img {
+        height: 200px;
+    }
+
+    /*BOTÃO*/
+    .diario-mensal {
+        flex-direction: column;
+        gap: 100px;
+        margin: 100px;
+    }
+
+    .consumo-diario {
+        height: 210px;
+        width: 200px;
+    }
+
+    .consumo-mensal {
+        height: 210px;
+        width: 200px;
+    }
+
+    .consumo-diario img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .consumo-mensal img {
+        height: 85px;
+        width: 90px;
+    }
+
+
+    .logo-meio {
+        display: none;
+    }
+
+    .botao-inicio {
+        display: flex;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    }
+
+    .botao-inicio:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* index2 */
+
+    .nav-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        position: relative;
+        left: 15px;
+    }
+
+    .name-usuario h1 {
+        font-size: 20px;
+        position: relative;
+        right: 130px;
+    }
+
+    .buttons {
+        position: relative;
+        right: -0px;
+    }
+
+    .logo {
+        position: relative;
+        right: 50px;
+    }
+
+    .logo img {
+        height: 100px;
+        width: 140px;
+        margin: 5px;
+        position: relative;
+
+    }
+}
+
+.dark-btn {
+    cursor: pointer;
+}
+
+.button-sair {
+    font-family: "Rubik", serif;
+}
+
+.formulariograf {
+    display: flex;
+    margin: 15px;
+}
+
+.fundograf {
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-top: 10px;
+    box-shadow: 10px 10px 40px black;
+
+}
+
+.ener {
+    display: none;
+}
+
+.vision {
+    display: none;
+}
+
+.container-grafico {
+    display: flex;
+    margin: 40px;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    height: 80vh;
+    /* Faz o contêiner ocupar toda a altura da tela */
+}
+
+.select-dispositivo {
+    font-family: "Rubik", serif;
+}
+
+/*Form dispositivo*/
+.ener2 {
+    display: none;
+}
+
+.vision2 {
+    display: none;
+}
+
+.name-usuario3 {
+    position: relative;
+    bottom: 10px;
+    left: -40px;
+}
+
+.Consumo-diario2 {
+    margin-bottom: 80px;
+}
+
+/* Container do gráfico */
+.container-grafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Fundo do gráfico */
+.fundograf {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Formulário */
+.formulariograf {
+    margin-bottom: 20px;
+}
+
+/* Botão */
+button {
+    background: #1B93CA;
+    color: white;
+    padding: 7px;
+    border: none;
+    margin: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Gráfico Responsivo */
+.grafico-mobile {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-grafico {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .fundograf {
+        width: 100%;
+        padding: 15px;
+        margin-top: -2em;
+
+    }
+
+    .grafico-mobile {
+        width: 100% !important;
+        height: 300px !important;
+    }
+}
+
+.nav-bar {
+    display: flex;
+
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+}
+
+.texto {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f4f8ff;
+    border-left: 6px solid #AB3232;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.texto p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.texto samp {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 15px;
+}

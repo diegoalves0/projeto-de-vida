@@ -1,0 +1,332 @@
+function createTrackingObject(initialQueue, base_url) {
+    return {
+        siteIdentifier: initialQueue?.siteIdentifier || initialQueue?.[0]?.siteIdentifier || null,
+        eventConfigs: initialQueue?.eventConfigs || initialQueue?.[0]?.eventConfigs || [],
+        isFullyLoaded: true,
+        isShopify: typeof window.Shopify === "object",
+        botDetectionResult: null,
+        init: function () {
+            // Process any initial commands or settings (e.g., siteIdentifier)
+            this.initBotDetection();
+            this.processCommand();
+            this.initEventTracking();
+        },
+        initBotDetection: function () {
+            var script = document.createElement("script");
+            script.type = "module";
+            script.text = `
+                var e=function(n,t){return e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t])},e(n,t)};function n(e,n,t,r){return new(t||(t=Promise))((function(i,o){function a(e){try{s(r.next(e))}catch(n){o(n)}}function u(e){try{s(r.throw(e))}catch(n){o(n)}}function s(e){var n;e.done?i(e.value):(n=e.value,n instanceof t?n:new t((function(e){e(n)}))).then(a,u)}s((r=r.apply(e,n||[])).next())}))}function t(e,n){var t,r,i,o,a={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function u(u){return function(s){return function(u){if(t)throw new TypeError("Generator is already executing.");for(;o&&(o=0,u[0]&&(a=0)),a;)try{if(t=1,r&&(i=2&u[0]?r.return:u[0]?r.throw||((i=r.return)&&i.call(r),0):r.next)&&!(i=i.call(r,u[1])).done)return i;switch(r=0,i&&(u=[2&u[0],i.value]),u[0]){case 0:case 1:i=u;break;case 4:return a.label++,{value:u[1],done:!1};case 5:a.label++,r=u[1],u=[0];continue;case 7:u=a.ops.pop(),a.trys.pop();continue;default:if(!(i=a.trys,(i=i.length>0&&i[i.length-1])||6!==u[0]&&2!==u[0])){a=0;continue}if(3===u[0]&&(!i||u[1]>i[0]&&u[1]<i[3])){a.label=u[1];break}if(6===u[0]&&a.label<i[1]){a.label=i[1],i=u;break}if(i&&a.label<i[2]){a.label=i[2],a.ops.push(u);break}i[2]&&a.ops.pop(),a.trys.pop();continue}u=n.call(e,a)}catch(s){u=[6,s],r=0}finally{t=i=0}if(5&u[0])throw u[1];return{value:u[0]?u[1]:void 0,done:!0}}([u,s])}}}function r(e,n,t){if(t||2===arguments.length)for(var r,i=0,o=n.length;i<o;i++)!r&&i in n||(r||(r=Array.prototype.slice.call(n,0,i)),r[i]=n[i]);return e.concat(r||Array.prototype.slice.call(n))}var i={Awesomium:"awesomium",Cef:"cef",CefSharp:"cefsharp",CoachJS:"coachjs",Electron:"electron",FMiner:"fminer",Geb:"geb",NightmareJS:"nightmarejs",Phantomas:"phantomas",PhantomJS:"phantomjs",Rhino:"rhino",Selenium:"selenium",Sequentum:"sequentum",SlimerJS:"slimerjs",WebDriverIO:"webdriverio",WebDriver:"webdriver",HeadlessChrome:"headless_chrome",Unknown:"unknown"},o=function(n){function t(e,r){var i=n.call(this,r)||this;return i.state=e,i.name="BotdError",Object.setPrototypeOf(i,t.prototype),i}return function(n,t){if("function"!=typeof t&&null!==t)throw new TypeError("Class extends value "+String(t)+" is not a constructor or null");function r(){this.constructor=n}e(n,t),n.prototype=null===t?Object.create(t):(r.prototype=t.prototype,new r)}(t,n),t}(Error);function a(e,n){var t={},r={bot:!1};for(var o in n){var a=(0,n[o])(e),u={bot:!1};"string"==typeof a?u={bot:!0,botKind:a}:a&&(u={bot:!0,botKind:i.Unknown}),t[o]=u,u.bot&&(r=u)}return[t,r]}function u(e){return n(this,void 0,void 0,(function(){var r,i,a=this;return t(this,(function(u){switch(u.label){case 0:return r={},i=Object.keys(e),[4,Promise.all(i.map((function(i){return n(a,void 0,void 0,(function(){var n,a,u,s,c;return t(this,(function(t){switch(t.label){case 0:n=e[i],t.label=1;case 1:return t.trys.push([1,3,,4]),a=r,u=i,c={},[4,n()];case 2:return a[u]=(c.value=t.sent(),c.state=0,c),[3,4];case 3:return s=t.sent(),r[i]=s instanceof o?{state:s.state,error:"".concat(s.name,": ").concat(s.message)}:{state:-3,error:s instanceof Error?"".concat(s.name,": ").concat(s.message):String(s)},[3,4];case 4:return[2]}}))}))})))];case 1:return u.sent(),[2,r]}}))}))}function s(e,n){return-1!==e.indexOf(n)}function c(e,n){return-1!==e.indexOf(n)}function d(e,n){if("find"in e)return e.find(n);for(var t=0;t<e.length;t++)if(n(e[t],t,e))return e[t]}function l(e){return Object.getOwnPropertyNames(e)}function f(e){for(var n=[],t=1;t<arguments.length;t++)n[t-1]=arguments[t];for(var r=function(n){if("string"==typeof n){if(s(e,n))return{value:!0}}else if(null!=d(e,(function(e){return n.test(e)})))return{value:!0}},i=0,o=n;i<o.length;i++){var a=o[i],u=r(a);if("object"==typeof u)return u.value}return!1}function v(e){return e.reduce((function(e,n){return e+(n?1:0)}),0)}var w={detectAppVersion:function(e){var n=e.appVersion;return 0===n.state&&(/headless/i.test(n.value)?i.HeadlessChrome:/electron/i.test(n.value)?i.Electron:/slimerjs/i.test(n.value)?i.SlimerJS:void 0)},detectDocumentAttributes:function(e){var n=e.documentElementKeys;return 0===n.state&&(f(n.value,"selenium","webdriver","driver")?i.Selenium:void 0)},detectErrorTrace:function(e){var n=e.errorTrace;return 0===n.state&&(/PhantomJS/i.test(n.value)?i.PhantomJS:void 0)},detectEvalLengthInconsistency:function(e){var n=e.evalLength,t=e.browserKind,r=e.browserEngineKind;if(0===n.state&&0===t.state&&0===r.state){var i=n.value;return"unknown"!==r.value&&(37===i&&!s(["webkit","gecko"],r.value)||39===i&&!s(["internet_explorer"],t.value)||33===i&&!s(["chromium"],r.value))}},detectFunctionBind:function(e){if(-2===e.functionBind.state)return i.PhantomJS},detectLanguagesLengthInconsistency:function(e){var n=e.languages;if(0===n.state&&0===n.value.length)return i.HeadlessChrome},detectNotificationPermissions:function(e){var n=e.notificationPermissions,t=e.browserKind;return 0===t.state&&"chrome"===t.value&&(0===n.state&&n.value?i.HeadlessChrome:void 0)},detectPluginsArray:function(e){var n=e.pluginsArray;if(0===n.state&&!n.value)return i.HeadlessChrome},detectPluginsLengthInconsistency:function(e){var n=e.pluginsLength,t=e.android,r=e.browserKind,o=e.browserEngineKind;if(0===n.state&&0===t.state&&0===r.state&&0===o.state&&"chrome"===r.value&&!t.value&&"chromium"===o.value)return 0===n.value?i.HeadlessChrome:void 0},detectProcess:function(e){var n,t=e.process;return 0===t.state&&("renderer"===t.value.type||null!=(null===(n=t.value.versions)||void 0===n?void 0:n.electron)?i.Electron:void 0)},detectUserAgent:function(e){var n=e.userAgent;return 0===n.state&&(/PhantomJS/i.test(n.value)?i.PhantomJS:/Headless/i.test(n.value)?i.HeadlessChrome:/Electron/i.test(n.value)?i.Electron:/slimerjs/i.test(n.value)?i.SlimerJS:void 0)},detectWebDriver:function(e){var n=e.webDriver;if(0===n.state&&n.value)return i.HeadlessChrome},detectWebGL:function(e){var n=e.webGL;if(0===n.state){var t=n.value,r=t.vendor,o=t.renderer;if("Brian Paul"==r&&"Mesa OffScreen"==o)return i.HeadlessChrome}},detectWindowExternal:function(e){var n=e.windowExternal;return 0===n.state&&(/Sequentum/i.test(n.value)?i.Sequentum:void 0)},detectWindowSize:function(e){var n=e.windowSize,t=e.documentFocus;if(0!==n.state||0!==t.state)return!1;var r=n.value,o=r.outerWidth,a=r.outerHeight;return t.value&&0===o&&0===a?i.HeadlessChrome:void 0},detectMimeTypesConsistent:function(e){var n=e.mimeTypesConsistent;if(0===n.state&&!n.value)return i.Unknown},detectProductSub:function(e){var n=e.productSub,t=e.browserKind;return 0===n.state&&0===t.state&&("chrome"!==t.value&&"safari"!==t.value&&"opera"!==t.value&&"wechat"!==t.value||"20030107"===n.value?void 0:i.Unknown)},detectDistinctiveProperties:function(e){var n=e.distinctiveProps;if(0!==n.state)return!1;var t,r=n.value;for(t in r)if(r[t])return t}};function m(){var e,n,t=window,r=navigator;return v(["webkitPersistentStorage"in r,"webkitTemporaryStorage"in r,0===r.vendor.indexOf("Google"),"webkitResolveLocalFileSystemURL"in t,"BatteryManager"in t,"webkitMediaStream"in t,"webkitSpeechGrammar"in t])>=5?"chromium":v(["ApplePayError"in t,"CSSPrimitiveValue"in t,"Counter"in t,0===r.vendor.indexOf("Apple"),"getStorageUpdates"in r,"WebKitMediaKeys"in t])>=4?"webkit":v(["buildID"in navigator,"MozAppearance"in(null!==(n=null===(e=document.documentElement)||void 0===e?void 0:e.style)&&void 0!==n?n:{}),"onmozfullscreenchange"in t,"mozInnerScreenX"in t,"CSSMozDocumentRule"in t,"CanvasCaptureMediaStream"in t])>=4?"gecko":"unknown"}var p={android:function(){var e=m(),n="chromium"===e,t="gecko"===e;if(!n&&!t)return!1;var r=window;return v(["onorientationchange"in r,"orientation"in r,n&&!("SharedWorker"in r),t&&/android/i.test(navigator.appVersion)])>=2},browserKind:function(){var e,n=null===(e=navigator.userAgent)||void 0===e?void 0:e.toLowerCase();return c(n,"edg/")?"edge":c(n,"trident")||c(n,"msie")?"internet_explorer":c(n,"wechat")?"wechat":c(n,"firefox")?"firefox":c(n,"opera")||c(n,"opr")?"opera":c(n,"chrome")?"chrome":c(n,"safari")?"safari":"unknown"},browserEngineKind:m,documentFocus:function(){return void 0!==document.hasFocus&&document.hasFocus()},userAgent:function(){return navigator.userAgent},appVersion:function(){var e=navigator.appVersion;if(null==e)throw new o(-1,"navigator.appVersion is undefined");return e},rtt:function(){if(void 0===navigator.connection)throw new o(-1,"navigator.connection is undefined");if(void 0===navigator.connection.rtt)throw new o(-1,"navigator.connection.rtt is undefined");return navigator.connection.rtt},windowSize:function(){return{outerWidth:window.outerWidth,outerHeight:window.outerHeight,innerWidth:window.innerWidth,innerHeight:window.innerHeight}},pluginsLength:function(){if(void 0===navigator.plugins)throw new o(-1,"navigator.plugins is undefined");if(void 0===navigator.plugins.length)throw new o(-3,"navigator.plugins.length is undefined");return navigator.plugins.length},pluginsArray:function(){if(void 0===navigator.plugins)throw new o(-1,"navigator.plugins is undefined");if(void 0===window.PluginArray)throw new o(-1,"window.PluginArray is undefined");return navigator.plugins instanceof PluginArray},errorTrace:function(){try{null[0]()}catch(e){if(e instanceof Error&&null!=e.stack)return e.stack.toString()}throw new o(-3,"errorTrace signal unexpected behaviour")},productSub:function(){var e=navigator.productSub;if(void 0===e)throw new o(-1,"navigator.productSub is undefined");return e},windowExternal:function(){if(void 0===window.external)throw new o(-1,"window.external is undefined");var e=window.external;if("function"!=typeof e.toString)throw new o(-2,"window.external.toString is not a function");return e.toString()},mimeTypesConsistent:function(){if(void 0===navigator.mimeTypes)throw new o(-1,"navigator.mimeTypes is undefined");for(var e=navigator.mimeTypes,n=Object.getPrototypeOf(e)===MimeTypeArray.prototype,t=0;t<e.length;t++)n&&(n=Object.getPrototypeOf(e[t])===MimeType.prototype);return n},evalLength:function(){return eval.toString().length},webGL:function(){var e=document.createElement("canvas");if("function"!=typeof e.getContext)throw new o(-2,"HTMLCanvasElement.getContext is not a function");var n=e.getContext("webgl");if(null===n)throw new o(-4,"WebGLRenderingContext is null");if("function"!=typeof n.getParameter)throw new o(-2,"WebGLRenderingContext.getParameter is not a function");return{vendor:n.getParameter(n.VENDOR),renderer:n.getParameter(n.RENDERER)}},webDriver:function(){if(null==navigator.webdriver)throw new o(-1,"navigator.webdriver is undefined");return navigator.webdriver},languages:function(){var e,n=navigator,t=[],r=n.language||n.userLanguage||n.browserLanguage||n.systemLanguage;if(void 0!==r&&t.push([r]),Array.isArray(n.languages))"chromium"===m()&&v([!("MediaSettingsRange"in(e=window)),"RTCEncodedAudioFrame"in e,""+e.Intl=="[object Intl]",""+e.Reflect=="[object Reflect]"])>=3||t.push(n.languages);else if("string"==typeof n.languages){var i=n.languages;i&&t.push(i.split(","))}return t},notificationPermissions:function(){return n(this,void 0,void 0,(function(){var e,n;return t(this,(function(t){switch(t.label){case 0:if(void 0===window.Notification)throw new o(-1,"window.Notification is undefined");if(void 0===navigator.permissions)throw new o(-1,"navigator.permissions is undefined");e=navigator.permissions;if("function"!=typeof e.query)throw new o(-2,"navigator.permissions.query is not a function");t.label=1;case 1:return t.trys.push([1,3,,4]),[4,e.query({name:"notifications"})];case 2:return n=t.sent(),[2,"denied"===window.Notification.permission&&"prompt"===n.state];case 3:throw t.sent(),new o(-3,"notificationPermissions signal unexpected behaviour");case 4:return[2]}}))}))},documentElementKeys:function(){if(void 0===document.documentElement)throw new o(-1,"document.documentElement is undefined");var e=document.documentElement;if("function"!=typeof e.getAttributeNames)throw new o(-2,"document.documentElement.getAttributeNames is not a function");return e.getAttributeNames()},functionBind:function(){if(void 0===Function.prototype.bind)throw new o(-2,"Function.prototype.bind is undefined");return Function.prototype.bind.toString()},process:function(){var e=window.process,n="window.process is";if(void 0===e)throw new o(-1,"".concat(n," undefined"));if(e&&"object"!=typeof e)throw new o(-3,"".concat(n," not an object"));return e},distinctiveProps:function(){var e,n,t=((e={})[i.Awesomium]={window:["awesomium"]},e[i.Cef]={window:["RunPerfTest"]},e[i.CefSharp]={window:["CefSharp"]},e[i.CoachJS]={window:["emit"]},e[i.FMiner]={window:["fmget_targets"]},e[i.Geb]={window:["geb"]},e[i.NightmareJS]={window:["__nightmare","nightmare"]},e[i.Phantomas]={window:["__phantomas"]},e[i.PhantomJS]={window:["callPhantom","_phantom"]},e[i.Rhino]={window:["spawn"]},e[i.Selenium]={window:["_Selenium_IDE_Recorder","_selenium","calledSelenium",/^([a-z]){3}_.*_(Array|Promise|Symbol)$/],document:["__selenium_evaluate","selenium-evaluate","__selenium_unwrapped"]},e[i.WebDriverIO]={window:["wdioElectron"]},e[i.WebDriver]={window:["webdriver","__webdriverFunc","__lastWatirAlert","__lastWatirConfirm","__lastWatirPrompt","_WEBDRIVER_ELEM_CACHE","ChromeDriverw"],document:["__webdriver_script_fn","__driver_evaluate","__webdriver_evaluate","__fxdriver_evaluate","__driver_unwrapped","__webdriver_unwrapped","__fxdriver_unwrapped","__webdriver_script_fn","__webdriver_script_func","__webdriver_script_function","$cdc_asdjflasutopfhvcZLmcf","$cdc_asdjflasutopfhvcZLmcfl_","$chrome_asyncScriptInfo","__$webdriverAsyncExecutor"]},e[i.HeadlessChrome]={window:["domAutomation","domAutomationController"]},e),o={},a=l(window),u=[];for(n in void 0!==window.document&&(u=l(window.document)),t){var s=t[n];if(void 0!==s){var c=void 0!==s.window&&f.apply(void 0,r([a],s.window,!1)),d=!(void 0===s.document||!u.length)&&f.apply(void 0,r([u],s.document,!1));o[n]=c||d}}return o}},h=function(){function e(){this.components=void 0,this.detections=void 0}return e.prototype.getComponents=function(){return this.components},e.prototype.getDetections=function(){return this.detections},e.prototype.detect=function(){if(void 0===this.components)throw new Error("BotDetector.detect can't be called before BotDetector.collect");var e=a(this.components,w),n=e[0],t=e[1];return this.detections=n,t},e.prototype.collect=function(){return n(this,void 0,void 0,(function(){var e;return t(this,(function(n){switch(n.label){case 0:return e=this,[4,u(p)];case 1:return e.components=n.sent(),[2,this.components]}}))}))},e}();function g(e){return(void 0===e?{}:e).monitoring,n(this,void 0,void 0,(function(){var e;return t(this,(function(n){switch(n.label){case 0:return[4,(e=new h).collect()];case 1:return n.sent(),[2,e]}}))}))}var b={load:g};
+                window.botdLoad = g;
+                window.botdReady = true;
+                    `;
+
+            var self = this;
+            script.onload = function () {
+            };
+            script.onerror = function () {
+                self.sendBotDetectionError("Script load error");
+            };
+            document.head.appendChild(script);
+            var checkBotD = setInterval(function () {
+                if (window.botdReady && typeof window.botdLoad === "function") {
+                    clearInterval(checkBotD);
+                    window.botdLoad()
+                        .then(function (botd) {
+                            try {
+                                self.botDetectionResult = botd.detect();
+                            } catch (error) {
+                                self.sendBotDetectionError(error.message || "Unknown error");
+                            }
+                        })
+                        .catch(function (loadError) {
+                            console.error("BotD initialization failed:", loadError);
+                            self.sendBotDetectionError(loadError.message || "Unknown error");
+                        });
+                }
+            }, 100);
+        },
+        processCommand: function () {
+            this.trackPageLoad();
+            // Implement other command processing as needed.
+        },
+        initEventTracking: function () {
+            this.initTrackPageView();
+            this.trackClicks(["button", "a"]); // Specify selectors for click tracking
+            // this.initScrollTracking();   // Remove Scroll Events
+            this.trackFormSubmissions("form"); // Specify selector for form submission tracking
+            this.trackTabSwitches();
+            this.trackPageUnload();
+        },
+        trackPageView: function (url) {
+            var data = this.collectBrowserData();
+            data.event = 'PageView';
+            data.url = url;
+            data.timestamp = Date.now();
+            data.botResult = this.botDetectionResult;
+            this.sendDataWithBeacon(data);
+        },
+        trackClicks: function (selectors) {
+            selectors.forEach((selector) => {
+                document.querySelectorAll(selector).forEach((element) => {
+                    // element.removeEventListener('click', () => { });
+                    element.addEventListener('click', () => {
+                        var data = this.collectBrowserData();
+                        data.isCustomEvent = false;
+                        data.event = 'Click';
+                        data.selector = selector;
+                        data.timestamp = Date.now();
+                        data.isCustomEvent = false;
+                        this.sendDataWithBeacon(data);
+                    });
+                });
+            });
+
+        },
+        initTrackPageView: function () {
+            // Track page views on history changes (e.g., back/forward buttons)
+            setTimeout(() => {
+                this.trackPageView(window.location.href);
+            }, 1000);
+
+            window.addEventListener('popstate', (event) => {
+                event.preventDefault();
+                setTimeout(() => {
+                    this.trackPageView(window.location.href);
+                }, 1000);
+            });
+
+            // Track page views on hash changes (single-page applications)
+            window.addEventListener('hashchange', (event) => {
+                event.preventDefault();
+                setTimeout(() => {
+                    this.trackPageView(window.location.href);
+                }, 1000);
+            });
+            // this.trackPageView(window.location.href);
+            // window.addEventListener('popstate', (event) => {
+            //     event.preventDefault();
+            //     this.trackPageView(window.location.href);
+            // });
+
+            // // Track page views on hash changes (single-page applications)
+            // window.addEventListener('hashchange', (event) => {
+            //     event.preventDefault();
+            //     this.trackPageView(window.location.href);
+            // });
+            // Track time-based active events (2s, 5s, 10s)
+            let timeOnPage = 0;
+            const timeThresholds = [
+                { seconds: 2, eventName: '2_Seconds_Active', triggered: false },
+                { seconds: 5, eventName: '5_Seconds_Active', triggered: false },
+                { seconds: 10, eventName: '10_Seconds_Active', triggered: false }
+            ];
+
+            const startTimeTracking = () => {
+                const startTime = Date.now();
+                const interval = setInterval(() => {
+                    timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+
+                    timeThresholds.forEach(threshold => {
+                        if (timeOnPage >= threshold.seconds && !threshold.triggered) {
+                            var data = this.collectBrowserData();
+                            data.event = threshold.eventName;
+                            data.url = window.location.href;
+                            data.time_spent = threshold.seconds;
+                            data.timestamp = Date.now();
+                            data.botResult = this.botDetectionResult;
+                            this.sendDataWithBeacon(data);
+                            threshold.triggered = true;
+                        }
+                    });
+
+                    if (timeOnPage >= 10) {
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            };
+
+            // Start time tracking on page load
+            startTimeTracking();
+        },
+        initScrollTracking: function () {
+            let lastScrollY = window.scrollY;
+            let isScrolling = false;
+            window.addEventListener('scroll', () => {
+                if (!isScrolling) { // Only proceed if not already processing a scroll event
+                    isScrolling = true;
+                    setTimeout(() => {
+                        let currentScrollY = window.scrollY;
+                        if (Math.abs(currentScrollY - lastScrollY) > 100) {
+                            lastScrollY = currentScrollY;
+                            var data = this.collectBrowserData();
+                            data.event = 'Scroll';
+                            data.isCustomEvent = false;
+                            data.timestamp = Date.now();
+                            this.sendDataWithBeacon(data);
+                        }
+                        isScrolling = false; // Reset the flag
+                    }, 3000); // Adjust the delay (in milliseconds) as needed
+                }
+            }, { passive: true });
+        },
+        trackTabSwitches: function () {
+            document.addEventListener('visibilitychange', () => {
+                var data = this.collectBrowserData();
+                data.event = 'TabSwitch';
+                data.visibilityState = document.visibilityState;
+                data.timestamp = Date.now();
+                this.sendDataWithBeacon(data);
+            });
+        },
+        trackFormSubmissions: function (selector) {
+            document.querySelectorAll(selector).forEach((form) => {
+                form.addEventListener('submit', (event) => {
+                    try {
+                        var formData = new FormData(event.target);
+                        var data = this.collectBrowserData();
+                        data.event = 'FormSubmission';
+                        data.formId = form.id || 'unnamed-form';
+                        data.timestamp = Date.now();
+
+                        // Send data using navigator.sendBeacon
+                        this.sendDataWithBeacon(data);
+                    } catch (error) {
+                        console.error('Error tracking form submission:', error);
+                    }
+                });
+            });
+        },
+        trackPageUnload: function () {
+            window.addEventListener('beforeunload', () => {
+                var data = this.collectBrowserData();
+                data.event = 'PageUnload';
+                data.timestamp = Date.now();
+                this.sendDataWithBeacon(data);
+            }
+            );
+        },
+        trackPageLoad: function () {
+            var data = this.collectBrowserData();
+            data.event = 'PageLoad';
+            data.timestamp = Date.now();
+            this.sendDataWithBeacon(data);
+            this.processFirstVisit();
+            this.processSessionStart();
+        },
+        processFirstVisit: function () {
+            if (!localStorage.getItem('blokIDFirstVisit')) {
+                localStorage.setItem('blokIDFirstVisit', new Date().toISOString());
+                data = this.collectBrowserData();
+                data.event = 'firstVisit';
+                data.timestamp = Date.now();
+                this.sendDataWithBeacon(data);
+            }
+        },
+        processSessionStart: function () {
+            let lastSessionTimestamp = localStorage.getItem('lastSessionTimestamp');
+            let currentTimestamp = Date.now();
+
+            if (!lastSessionTimestamp || (currentTimestamp - lastSessionTimestamp) > 30 * 60 * 1000) { // 30 minutes inactivity
+                // Trigger 'session_start' event
+                data = this.collectBrowserData();
+                data.event = 'sessionStart';
+                data.timestamp = currentTimestamp;
+                this.sendDataWithBeacon(data);
+            }
+            lastSessionTimestamp = currentTimestamp;
+
+        },
+        collectBrowserData: function () {
+            var data = {
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                screenWidth: screen.width,
+                screenHeight: screen.height,
+                colorDepth: screen.colorDepth,
+                pixelDepth: screen.pixelDepth,
+                timezoneOffset: new Date().getTimezoneOffset(),
+                sessionStorage: !!window.sessionStorage,
+                localStorage: !!window.localStorage,
+                cookiesEnabled: navigator.cookieEnabled,
+                doNotTrack: navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack,
+                plugins: Array.prototype.slice.call(navigator.plugins).map(function (plugin) {
+                    return plugin.name;
+                }),
+                currentUrl: window.location.href,
+                previousUrl: document.referrer,
+                mimeTypes: Array.prototype.slice.call(navigator.mimeTypes).map(function (mimeType) {
+                    return mimeType.type;
+                }),
+                touchSupport: ('ontouchstart' in window || navigator.maxTouchPoints || navigator.msMaxTouchPoints) ? true : false,
+                hardwareConcurrency: navigator.hardwareConcurrency,
+                deviceMemory: navigator.deviceMemory,
+                siteIdentifier: this.siteIdentifier, // Include the site identifier in collected data
+                timestamp: new Date().toISOString(), // Add a timestamp for when the data was collected
+            };
+
+            // Canvas fingerprinting
+            try {
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                ctx.textBaseline = "top";
+                ctx.font = "14px 'Arial'";
+                ctx.fillStyle = "#f60";
+                ctx.fillRect(125, 1, 62, 20);
+                ctx.fillStyle = "#069";
+                ctx.fillText("Hello world", 2, 15);
+                ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+                ctx.fillText("Hello world", 4, 17);
+                data.canvasFingerprint = canvas.toDataURL();
+            } catch (e) {
+                data.canvasFingerprint = 'not supported';
+            }
+
+            return data;
+        },
+        sendDataWithBacon: function (data) {
+            try {
+                var jsonData = JSON.stringify(data);
+                var url = `${base_url}/track`;
+                navigator.sendBeacon(url, jsonData);
+            } catch (error) {
+                console.error('Failed to send data:', error);
+            }
+        },
+        sendData: function (data) {
+            try {
+                var xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+                xhr.open('POST', `${base_url}/track`, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(data));
+            } catch (error) {
+                console.error('Failed to send data:', error);
+            }
+
+        },
+        sendDataWithBeacon: function (data) {
+            try {
+                var jsonData = JSON.stringify(data);
+                var url = `${base_url}/track`;
+                navigator.sendBeacon(url, jsonData);
+            } catch (error) {
+                console.error('Failed to send data:', error);
+            }
+        },
+    };
+}
+
+(function () {
+    // Initial setup of vaticaiTracker and processing of any commands or configurations pushed before this script loads.
+    var initialVaticaiQueue = window.dashFiTracker || {};
+    let base_url = "https://pixel.dashfi.dev";
+    window.dashFiTracker = createTrackingObject(initialVaticaiQueue,base_url);
+    
+    // wait for the page load event to ensure all elements are loaded
+   setTimeout(() => {
+        if (window.dashFiTracker.siteIdentifier) {
+            window.dashFiTracker.init();
+        }
+    }, 1000);
+})();
